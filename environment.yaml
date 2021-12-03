@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - spacy
-  #- scispacy installed using pip install scispacy
+  - scispacy installed using pip install scispacy
   - requests
   - pandas
   - networkx
