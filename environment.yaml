@@ -2,6 +2,7 @@ name: nlp
 channels:
   - conda-forge
 dependencies:
+  - python=3.7
   - spacy
   - scispacy installed using pip install scispacy
   - requests
