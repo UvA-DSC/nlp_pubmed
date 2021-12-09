@@ -64,7 +64,7 @@ def perform_query(query):
     
     # Get data and write XML (URL should result from a query)
     URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query}"
-    response = requests.get()
+    response = requests.get(URL)
     data = response.content.decode()
     
     # Parse XML and extract sensible tags
