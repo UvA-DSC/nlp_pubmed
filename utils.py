@@ -58,12 +58,28 @@ def extract_clean(text, tag_remove=tag_remove, total_remove=total_remove):
     return text
 
 
-def perform_query(query):
+def perform_query(query, page_size=25):
     """Query to perform on Europe PMC, returning
-    a list of PMC IDs, which can be queried later"""
+    a list of PMC IDs, which can be queried later
+    
+    Params
+    -------
+    query: str
+      A string with keywords such as 'trichome', 'covid-19'. Multiple keywords have to be separated with %20 such as 
+      'trichome%20%tomato'
+    page_size: int
+      An integer specifying the number of articles to retrieve per page. The default value is 25, the maximum is 1000
+    
+    Returns
+    -------
+    IDs: list
+      A list of Europe PubMed Central identifiers e.g. ['PMC6480907', 'PMC8497795', 'PMC8514689', 'PMC8590222', 'PMC8245418'] 
+    """
     
     # Get data and write XML (URL should result from a query)
-    URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query}"
+    #URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query}"
+    full_query = query + '&pageSize=' + str(page_size) 
+    URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={full_query}"
     response = requests.get(URL)
     data = response.content.decode()
     
