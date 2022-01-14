@@ -75,7 +75,10 @@ def perform_query(query, page_size=25):
     IDs: list
       A list of Europe PubMed Central identifiers e.g. ['PMC6480907', 'PMC8497795', 'PMC8514689', 'PMC8590222', 'PMC8245418'] 
     """
-    
+    # Check if page size < 1000
+    assert isinstance(page_size, int), 'page_size parameter has to be a positive integer'
+    assert page_size <= 1000, 'page_size parameter has to be lower than 1000'
+        
     # Get data and write XML (URL should result from a query)
     #URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query}"
     full_query = query + '&pageSize=' + str(page_size) 
