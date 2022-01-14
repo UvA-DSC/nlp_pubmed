@@ -18,14 +18,20 @@ Rest API
 search = module to search the publication database.
 fullTextXML = module to retrieve the full text of Open Access articles.
 
-## Example COVID-19
+## Creating the query per article type
+To search for research-article or review for instance:  
+> From the [Europe PMC documentation](https://europepmc.org/RestfulWebService#!/Europe32PMC32Articles32RESTful32API/search):    
+User query. Possible options are:
+- a keyword or combination of keywords (e.g. HPV virus).
+- a phrase with enclosing speech marks (e.g. "human malaria").
+- a fielded search (e.g. auth:stoehr).
+Available search fields are listed in the Appendix 1 of the Reference Guide or can be retrieved using the fields module of the API.
+- a specific publication (e.g. ext_id:781840 src:med)
+Specify ext_id as the article identifier, and src as the source database. List of the data sources can be found on the help pages or in section 3 of the Reference Guide.
 
-```python
-base_url = "http://www.ebi.ac.uk/europepmc/webservices/rest/search?"
+__pub_type:research-article__  
 
-payload = {}
-```
-
+Example query:  https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=trichome%20pub_type:research-article&pageSize=20
 
 # Wellcome Trust Utilities
 
