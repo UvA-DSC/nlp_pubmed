@@ -6,7 +6,7 @@ import regex as re
 
 tag_remove = ['italic', 'bold', 'sup', 'sub', 'underline', 'title', 'sec', 'p',
              'list', 'list-item']
-total_remove = ['xref', 'table-wrap', 'fig', 'label']
+total_remove = ['xref', 'table-wrap', 'fig', 'label', 'a']
 
 def extract_clean(text, tag_remove=tag_remove, total_remove=total_remove):
     """XML string will come in.
@@ -63,7 +63,7 @@ def perform_query(query):
     a list of PMC IDs, which can be queried later"""
     
     # Get data and write XML (URL should result from a query)
-    URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query}"
+    URL = f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={query} pub_type:research-article&pageSize=100"
     response = requests.get(URL)
     data = response.content.decode()
     
@@ -85,4 +85,3 @@ def retrieve_paper(PMCID):
     response = requests.get(URL)
     data = response.content.decode()
     return data
-    
