@@ -10,3 +10,4 @@ dependencies:
   - jupyterlab
   - pip:
       - scispacy
+      - regex
