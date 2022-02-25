@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ScienceParkStudyGroup/nlp_pubmed/main?labpath=Obtaining_PubMed_data.ipynb)
+
 # NLP processing of PubMed
 Natural Language Processing based on a query to Europe PMC Open Access database. 
 
