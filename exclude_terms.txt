@@ -12,3 +12,6 @@ GFP
 mml
 show
 ext-link
+math></inline-formula
+named-content content-type="taxon-name"><named-content content-type="genus"
+T.</named-content><named-content content-type="species"
